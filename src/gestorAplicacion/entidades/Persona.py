@@ -4,6 +4,7 @@ from abc import ABC, abstractmethod
 
 
 class Persona:
+
     @multimethod 
     def __init__(self, nombre, edad, sexo, tipo_documento, num_documento, telefono, direccion, correo):
         self.nombre = nombre
@@ -74,7 +75,7 @@ class Persona:
     #metodos abstractos 
 
     @abstractmethod  
-    def toString():
+    def __str__():
         pass
 
     @abstractmethod
