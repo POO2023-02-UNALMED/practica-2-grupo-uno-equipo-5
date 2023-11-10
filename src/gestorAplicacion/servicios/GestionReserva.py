@@ -10,7 +10,7 @@ class GestionReserva:
         self._estado_=estado
         self._hotel=hotel
         self._serviciosAdicionales_=[]
-        self.addReserva(self)
+        GestionReserva.reservas.append(self)
 
 #metodos get  
     def getCliente(self):
@@ -64,3 +64,11 @@ class GestionReserva:
     def borrarReserva(self):
         GestionReserva.reservas.remove(self)
 
+#to Str
+    def __str__(self):
+        return ("Reservas\n"+
+                "  -Cliente: "+self._cliente_.__str()+"\n"+
+                "  -Habitacion: "+self._habitacion_+"\n"+
+                "  -Estadia: "+self._nochesEstadia_+" noches\n"+
+                "  -Servicios Adivionales: "+self._serviciosAdicionales_+
+                "--------------------------------------------------------\n")
