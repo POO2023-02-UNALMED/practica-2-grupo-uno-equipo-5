@@ -64,10 +64,15 @@ class GestionReserva:
     def borrarReserva(self):
         GestionReserva.reservas.remove(self)
 
+#metodo de clase
+    @classmethod
+    def getReservas(cls):
+        return cls.reservas
+    
 #to Str
     def __str__(self):
         return ("Reservas\n"+
-                "  -Cliente: "+self._cliente_.__str()+"\n"+
+                "  -Cliente: "+self._cliente_.__str__()+"\n"+
                 "  -Habitacion: "+self._habitacion_+"\n"+
                 "  -Estadia: "+self._nochesEstadia_+" noches\n"+
                 "  -Servicios Adivionales: "+self._serviciosAdicionales_+
