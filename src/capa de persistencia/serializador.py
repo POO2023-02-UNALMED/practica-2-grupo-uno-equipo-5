@@ -10,7 +10,7 @@ class Serializador:
 
         #hacer dump de cada servicio (con funciones lambda para que no tarde 3 años en compilar)
         map(lambda i: pickle.dump(i, pklServicios),GestionReserva.getReservas())
-        map(lambda i: pickle.dump(i, pklServicios),Habitacion.getHabitaciones())
+        #map(lambda i: pickle.dump(i, pklServicios),Habitacion.getHabitaciones())
         map(lambda i: pickle.dump(i, pklServicios),Hotel.getHoteles())
         map(lambda i: pickle.dump(i, pklServicios), Pago.getPagos())
         map(lambda i: pickle.dump(i, pklServicios), Servicio.getServicios)
