@@ -23,6 +23,7 @@ class Persona:
         self.num_documento=num_documento
         self.telefono=telefono
     
+    #getters
     def get_nombre(self):
         return self.nombre
 
@@ -80,5 +81,5 @@ class Persona:
 
     @abstractmethod
     def personaRol():
-        pass 
-   
+        pass
+    
