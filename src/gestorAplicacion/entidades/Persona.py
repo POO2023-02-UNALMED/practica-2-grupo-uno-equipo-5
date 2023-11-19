@@ -1,12 +1,11 @@
 import gestorAplicacion
-from multimethod import multimethod
+#from multimethod import multimethod
 from abc import ABC, abstractmethod
 
 
 class Persona:
-
-    @multimethod 
-    def __init__(self, nombre, edad, sexo, tipo_documento, num_documento, telefono, direccion, correo):
+#    @multimethod 
+    def __init__(self, nombre, edad, sexo, tipo_documento, num_documento, telefono, direccion=None, correo=None):
         self.nombre = nombre
         self.edad=edad
         self.sexo=sexo
@@ -16,14 +15,13 @@ class Persona:
         self.direccion=direccion
         self.correo=correo
     
-    @multimethod
-    def __init__(self, nombre, tipo_documento, num_documento,  telefono):
-        self.nombre=nombre
-        self.tipo_documento=tipo_documento
-        self.num_documento=num_documento
-        self.telefono=telefono
+#    @multimethod
+#    def __init__(self, nombre, tipo_documento, num_documento,  telefono):
+#        self.nombre=nombre
+#        self.tipo_documento=tipo_documento
+#        self.num_documento=num_documento
+#        self.telefono=telefono
     
-    #getters
     def get_nombre(self):
         return self.nombre
 
@@ -81,5 +79,5 @@ class Persona:
 
     @abstractmethod
     def personaRol():
-        pass
-    
+        pass 
+   

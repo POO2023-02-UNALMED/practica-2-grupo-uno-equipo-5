@@ -31,7 +31,7 @@ class Hotel:
         self._direccion_=direccion
 
     def setTarifas(self, tarifas):
-        self._tarifas_.append(tarifas)
+        self._tarifas_= tarifas
 
     def setServicios(self, servicios):
         self._servicios_=servicios
@@ -39,6 +39,9 @@ class Hotel:
     def setComentarios(self, args):
         for i in args:
             self._comentarios_.append(i)
+
+    def setCalificacion(self, calificacion):
+        self._calificacion_=calificacion
     
     #metodos de instacia
     def addResena(self, comentario, calificacion):
@@ -49,6 +52,11 @@ class Hotel:
     def addHabitaciones(self, habitacion):
         self._habitaciones_.append(habitacion)
         self.setTarifas(habitacion.getPrecio())
+
+    #cls method
+    @classmethod
+    def getHoteles(cls):
+        return cls.hoteles
     
     def __str__(self):
-        return ""
+        return "asdfghj"
