@@ -1,9 +1,8 @@
-from gestorAplicacion import gestorAplicacion
 
 class Hotel:
     hoteles=[]
 
-    def __init__(self, nombre="", direccion="", tarifas=[], servicios=[], comentarios="", calificacion=0):
+    def __init__(self, nombre="", direccion="", tarifas=[], servicios=[], comentarios=[], calificacion=0):
         self._nombre_=nombre
         self._direccion_=direccion
         self._tarifas_=tarifas
@@ -23,6 +22,9 @@ class Hotel:
     
     def getTarifas(self):
         return self._tarifas_
+    
+    def getServicios(self):
+        return self._servicios_
     #metodos set
     def setNombre(self,nombre):
         self._nombre_=nombre
@@ -36,7 +38,7 @@ class Hotel:
     def setServicios(self, servicios):
         self._servicios_=servicios
 
-    def setComentarios(self, args):
+    def setComentarios(self, *args):
         for i in args:
             self._comentarios_.append(i)
 
