@@ -1,3 +1,4 @@
+import gestorAplicacion
 from gestorAplicacion.servicios.Pago import Pago
 from gestorAplicacion.entidades.Persona import Persona
 from gestorAplicacion.servicios.Servicio import Servicio
