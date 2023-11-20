@@ -18,3 +18,5 @@ if __name__=="__main__":
         hab= Habitacion(hotel1,(100+i),4,100, "estandar", False)
         hotel1.addHabitaciones(hab)
 
+    #interfaz grafica de usuario aqui:
+    
