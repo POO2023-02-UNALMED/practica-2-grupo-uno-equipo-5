@@ -93,6 +93,8 @@ welcome.pack(expand=True)
 
 p4_frame= tk.Frame(p1_frame, bg="black")
 p4_frame.place(x=5, y=235, width=360, height=320)
+boton_ingreso = tk.Button(p4_frame, text="Ingresar al Sistema", bg="#1A8CAC", command=ir_a_ventana_principal, font=("Helvetica", 10))
+boton_ingreso.pack(side="bottom",fill="x")
 fotoprin=tk.Label(p4_frame,bg="red", )
 fotoprin.pack(side="top", pady=10)
 fotoprin.bind("<Enter>", lambda event: cambiar_imagen_principal(event))
