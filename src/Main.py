@@ -5,6 +5,7 @@ from capaPersistencia.serializador import Serializador
 from capaPersistencia.deserializador import Deserializador
 import tkinter as tk
 from tkinter import Tk, Entry, Button, PhotoImage
+import os
 
 if __name__=="__main__":
     serv1= Servicio("Desayuno", 2.99, "6:00", "10:00")
@@ -47,7 +48,10 @@ def ir_a_ventana_principal():
     ventana_principal = tk.Toplevel()
     ventana_principal.title("Ventana Principal de Usuario")
 
-
+def cambiar_imagen_principal(event):
+    global indice_imagen_actual
+    indice_imagen_actual = (indice_imagen_actual + 1) % len(lista_imagenes)
+    fotoprin.config(image=lista_imagenes[indice_imagen_actual])
 
 
 #Cracion de ventanas
@@ -55,6 +59,17 @@ kick = Tk()
 kick.title("Hotel Sol Caribe")
 kick.resizable(1, 1)
 kick.geometry('800x600')
+
+ruta_carpeta = os.path.dirname(os.path.abspath(__file__))
+imagen_principal = PhotoImage(file=os.path.join(ruta_carpeta, "Marco1.png"))
+nueva_imagen_1 = PhotoImage(file=os.path.join(ruta_carpeta, "Marco2.png"))
+nueva_imagen_2 = PhotoImage(file=os.path.join(ruta_carpeta, "Marco3.png"))
+nueva_imagen_3 = PhotoImage(file=os.path.join(ruta_carpeta, "Marco4.png"))
+nueva_imagen_4 = PhotoImage(file=os.path.join(ruta_carpeta, "Marco5.png"))
+nueva_imagen_5 = PhotoImage(file=os.path.join(ruta_carpeta, "Tomas3.png"))
+
+lista_imagenes = [imagen_principal, nueva_imagen_1, nueva_imagen_2, nueva_imagen_3, nueva_imagen_4, nueva_imagen_5]
+indice_imagen_actual = 0
 
 #creacion de frames y su distribucion
 all_frame = tk.Frame(kick, bg="#D3F1F9")
@@ -80,6 +95,7 @@ p4_frame= tk.Frame(p1_frame, bg="black")
 p4_frame.place(x=5, y=235, width=360, height=320)
 fotoprin=tk.Label(p4_frame,bg="red", )
 fotoprin.pack(side="top", pady=10)
+fotoprin.bind("<Enter>", lambda event: cambiar_imagen_principal(event))
 
 p5_frame= tk.Frame(p2_frame, bg="black")
 p5_frame.place(x=5, y=5, width=360, height=220)
