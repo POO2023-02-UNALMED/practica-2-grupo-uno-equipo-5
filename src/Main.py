@@ -4,7 +4,7 @@ from gestorAplicacion.servicios.Servicio import Servicio
 from capaPersistencia.serializador import Serializador
 from capaPersistencia.deserializador import Deserializador
 import tkinter as tk
-from tkinter import Tk, Entry, Button, PhotoImage
+from tkinter import Tk, Entry, Button, PhotoImage, Menu, messagebox
 import os
 
 if __name__=="__main__":
@@ -53,12 +53,24 @@ def cambiar_imagen_principal(event):
     indice_imagen_actual = (indice_imagen_actual + 1) % len(lista_imagenes)
     fotoprin.config(image=lista_imagenes[indice_imagen_actual])
 
+def salir_aplicacion():
+    respuesta = messagebox.askyesno("Salir", "¿Estás seguro de que quieres salir?")
+    if respuesta:
+        kick.destroy()
+
+def descripcion_sistema():
+    # Puedes mostrar la descripción en algún widget de la ventana principal
+    # por ejemplo, creando una etiqueta temporal o una nueva ventana
+    descripcion = "¡Bienvenido al sistema del Hotel Sol Caribe! \nEste sistema te permite realizar reservas y más."
+    tk.messagebox.showinfo("Descripción del Sistema", descripcion)
+
 
 #Cracion de ventanas
 kick = Tk()
 kick.title("Hotel Sol Caribe")
 kick.resizable(1, 1)
 kick.geometry('800x600')
+kick.configure(bg="#15ADD6")
 
 ruta_carpeta = os.path.dirname(os.path.abspath(__file__))
 imagen_principal = PhotoImage(file=os.path.join(ruta_carpeta, "Marco1.png"))
@@ -77,6 +89,12 @@ all_frame.pack(fill="both", expand=True)
 
 top_frame= tk.Frame(all_frame, bg="#15ADD6", height=50)
 top_frame.pack(fill='x')
+barra_menu = Menu(kick)
+menu_inicio = Menu(barra_menu, tearoff=0)
+menu_inicio.add_command(label="Salir de la aplicación", command=salir_aplicacion)
+menu_inicio.add_command(label="Descripción del sistema", command=descripcion_sistema)
+barra_menu.add_cascade(label="Inicio", menu=menu_inicio)
+kick.config(menu=barra_menu)
 
 p1_frame = tk.Frame(all_frame, bg="#92BAC5")
 p1_frame.place(x=20, y=30, width=370, height=560)
