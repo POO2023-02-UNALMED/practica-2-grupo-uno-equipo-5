@@ -5,6 +5,7 @@ class ServiciosHotel(Enum):
     SPA = "Spa"
     HABITACION = "Servicio a la Habitación"
     PISCINA = "Piscina"
+    EQUIPAJE = "Servicio de Equipaje"
   
 
 class Servicio:

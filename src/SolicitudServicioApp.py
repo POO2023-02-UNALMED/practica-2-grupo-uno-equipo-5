@@ -53,22 +53,43 @@ class SolicitudServicioApp:
 
             # Verifica si se encontró el cliente
             if cliente_encontrado:
-                # Obtener la reserva del cliente
-                reserva = cliente_encontrado.reserva
-                if reserva is not None:
-                    # Si la reserva existe, crear un nuevo objeto Servicio y agregarlo a la lista de servicios de la reserva
-                    servicio = Servicio(servicio_enum, 100, hora_inicio, hora_fin)
-                    reserva._serviciosAdicionales_.append(servicio)
-                    cliente_encontrado.solicitarServicio(servicio)
-
-                    mensaje = f"Solicitud de servicio:\nCliente: {nombre_cliente}\nServicio: {servicio_enum}\nHora de Inicio: {hora_inicio}\nHora de Fin: {hora_fin}"
-                    messagebox.showinfo("Solicitud Enviada", mensaje)
+                # Si el servicio es "Servicio de Equipaje", mostrar una ventana para ingresar la cantidad
+                if servicio_enum == ServiciosHotel.EQUIPAJE:
+                    self.solicitar_cantidad_equipaje(cliente_encontrado)
                 else:
-                    messagebox.showinfo("Información", f"El cliente {nombre_cliente} no tiene reservas para este servicio.")
+                    # Obtener la reserva del cliente
+                    reserva = cliente_encontrado.reserva
+                    if reserva is not None:
+                        # Si la reserva existe, crear un nuevo objeto Servicio y agregarlo a la lista de servicios de la reserva
+                        servicio = Servicio(servicio_enum, 100, hora_inicio, hora_fin)
+                        reserva._serviciosAdicionales_.append(servicio)
+                        cliente_encontrado.solicitarServicio(servicio)
+
+                        mensaje = f"Solicitud de servicio:\nCliente: {nombre_cliente}\nServicio: {servicio_enum}\nHora de Inicio: {hora_inicio}\nHora de Fin: {hora_fin}"
+                        messagebox.showinfo("Solicitud Enviada", mensaje)
+                    else:
+                        messagebox.showinfo("Información", f"El cliente {nombre_cliente} no tiene reservas para este servicio.")
             else:
                 messagebox.showerror("Error", f"No se encontró un cliente con el nombre {nombre_cliente}")
         else:
             messagebox.showerror("Error", "Por favor, complete todos los campos.")
+
+    def solicitar_cantidad_equipaje(self, cliente):
+        # Función para solicitar la cantidad de equipaje mediante una ventana emergente
+        cantidad_equipaje_var = tk.StringVar()
+        cantidad_equipaje_entry = tk.Entry(self.root, textvariable=cantidad_equipaje_var)
+        tk.Label(self.root, text="Cantidad de Equipaje:").grid(row=5, column=0, padx=10, pady=5)
+        cantidad_equipaje_entry.grid(row=5, column=1, padx=10, pady=5)
+        
+
+        def administrar_servicio_equipaje():
+            cantidad_equipaje = cantidad_equipaje_var.get()
+            cliente.equipaje=cantidad_equipaje
+            mensaje = f"Equipaje llevado a la habitación {cliente.reserva.getHabitacion().getNumero()}"
+            messagebox.showinfo("Servicio de Equipaje", mensaje)
+            self.root.destroy()
+
+        tk.Button(self.root, text="Administrar Servicio", command=administrar_servicio_equipaje).grid(row=6, column=0, columnspan=2, pady=10)
 
 if __name__ == "__main__":
     root = tk.Tk()

@@ -43,6 +43,7 @@ class Cliente(Persona):
         return str(self.reserva)
 
     def cancelarReserva(self, reserva):
+        self.equipaje=None
         if not self.historial:
             return False
         reserva.borrarReserva()
