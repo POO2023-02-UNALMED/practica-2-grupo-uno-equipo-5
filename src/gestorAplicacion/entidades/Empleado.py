@@ -30,7 +30,7 @@ class Empleado(Persona):
         self.sueldo = sueldo
 
     def personaRol(self):
-        return "Hola"
+        return "Aseador"
 
     def ascender(self):
         pass

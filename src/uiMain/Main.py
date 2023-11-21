@@ -138,6 +138,13 @@ img = img_nombre.resize((163, 150), Image.BILINEAR)
 nueva_imagen_5 = ImageTk.PhotoImage(img)
 
 
+imagen_principal = PhotoImage(file=os.path.join(ruta_carpeta, "hotel1.png"))
+nueva_imagen_1 = PhotoImage(file=os.path.join(ruta_carpeta, "hotel2.png"))
+nueva_imagen_2 = PhotoImage(file=os.path.join(ruta_carpeta, "hotel3.png"))
+nueva_imagen_3 = PhotoImage(file=os.path.join(ruta_carpeta, "hotel4.png"))
+nueva_imagen_4 = PhotoImage(file=os.path.join(ruta_carpeta, "hotel5.png"))
+nueva_imagen_5 = PhotoImage(file=os.path.join(ruta_carpeta, "hotel1.png"))
+
 lista_imagenes = [imagen_principal, nueva_imagen_1, nueva_imagen_2, nueva_imagen_3, nueva_imagen_4, nueva_imagen_5]
 indice_imagen_actual = 0
 
