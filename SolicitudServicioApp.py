@@ -1,4 +1,5 @@
 from gestorAplicacion.servicios.GestionReserva import Servicio
+from gestorAplicacion.servicios.GestionReserva import ServiciosHotel
 from gestorAplicacion.entidades.Cliente import Cliente
 from capaPersistencia.serializador import Serializador
 from capaPersistencia.deserializador import Deserializador
