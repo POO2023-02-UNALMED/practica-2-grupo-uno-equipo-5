@@ -89,19 +89,6 @@ def cambiar_imagen_principal(event):
     indice_imagen_actual = (indice_imagen_actual + 1) % len(lista_imagenes)
     fotoprin.config(image=lista_imagenes[indice_imagen_actual])
 
-'''def registrar(event):
-    ventana= Tk()
-    ventana.title("registrar usuario")
-    ventana.geometry("300x300")
-    criterios=["nombre", "tipo_cedula", "numero_cedula", "telefono"]
-    ff= FieldFrame(master=ventana, criterios=criterios)
-    ff.pack()
-    otra_clase = ffOut(ff)
-    boton_obtener_y_guardar = tk.Button(ventana, text="Guardar Valores", command= otra_clase.guardar_valores)
-    boton_obtener_y_guardar.pack(pady=10)
-    continuar= tk.Button(ventana, text="continuar", command= show_signup_window)
-    continuar.pack()
-    ventana.mainloop()'''
 
 def register():
     # Perform user registration (you can add your logic here)
@@ -194,8 +181,27 @@ img_nombre = Image.open("src/uiMain/Tomas3.png")
 img = img_nombre.resize((163, 150), Image.BILINEAR)
 nueva_imagen_5 = ImageTk.PhotoImage(img)
 
+img_hotel= Image.open("src/uiMain/hotel1.png")
+img= img_hotel.resize((300,300), Image.BILINEAR)
+hotel1= ImageTk.PhotoImage(img)
 
-lista_imagenes = [imagen_principal, nueva_imagen_1, nueva_imagen_2, nueva_imagen_3, nueva_imagen_4, nueva_imagen_5]
+img_hotel= Image.open("src/uiMain/hotel2.png")
+img= img_hotel.resize((300,300), Image.BILINEAR)
+hotel2= ImageTk.PhotoImage(img)
+
+img_hotel= Image.open("src/uiMain/hotel3.png")
+img= img_hotel.resize((300,300), Image.BILINEAR)
+hotel3= ImageTk.PhotoImage(img)
+
+img_hotel= Image.open("src/uiMain/hotel4.png")
+img= img_hotel.resize((300,300), Image.BILINEAR)
+hotel4= ImageTk.PhotoImage(img)
+
+img_hotel= Image.open("src/uiMain/hotel5.png")
+img= img_hotel.resize((300,300), Image.BILINEAR)
+hotel5= ImageTk.PhotoImage(img)
+
+lista_imagenes = [hotel1, hotel2, hotel3, hotel4, hotel5]
 indice_imagen_actual = 0
 
 # creacion de frames y su distribucion
