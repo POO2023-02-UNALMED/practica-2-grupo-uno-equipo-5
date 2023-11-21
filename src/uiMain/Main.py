@@ -89,12 +89,12 @@ kick.geometry('800x600')
 kick.configure(bg="#15ADD6")
 
 ruta_carpeta = os.path.dirname(os.path.abspath(__file__))
-imagen_principal = PhotoImage(file=os.path.join(ruta_carpeta, "Marco1.png"))
-nueva_imagen_1 = PhotoImage(file=os.path.join(ruta_carpeta, "Marco2.png"))
-nueva_imagen_2 = PhotoImage(file=os.path.join(ruta_carpeta, "Marco3.png"))
-nueva_imagen_3 = PhotoImage(file=os.path.join(ruta_carpeta, "Marco4.png"))
-nueva_imagen_4 = PhotoImage(file=os.path.join(ruta_carpeta, "Marco5.png"))
-nueva_imagen_5 = PhotoImage(file=os.path.join(ruta_carpeta, "Tomas3.png"))
+imagen_principal = PhotoImage(file=os.path.join(ruta_carpeta, "hotel1.png"))
+nueva_imagen_1 = PhotoImage(file=os.path.join(ruta_carpeta, "hotel2.png"))
+nueva_imagen_2 = PhotoImage(file=os.path.join(ruta_carpeta, "hotel3.png"))
+nueva_imagen_3 = PhotoImage(file=os.path.join(ruta_carpeta, "hotel4.png"))
+nueva_imagen_4 = PhotoImage(file=os.path.join(ruta_carpeta, "hotel5.png"))
+nueva_imagen_5 = PhotoImage(file=os.path.join(ruta_carpeta, "hotel1.png"))
 
 lista_imagenes = [imagen_principal, nueva_imagen_1, nueva_imagen_2, nueva_imagen_3, nueva_imagen_4, nueva_imagen_5]
 indice_imagen_actual = 0
