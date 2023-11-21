@@ -70,6 +70,14 @@ class Cliente(Persona):
 
     def getPuntos(self):
         return self.puntos
+    
+    @staticmethod
+    def getClienteByNombre(nombre):
+        for cliente in Cliente.clientes:
+         if cliente.getNombre() == nombre:
+            return cliente
+        return None
+
 
     @staticmethod
     def getClientes():
