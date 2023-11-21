@@ -58,7 +58,7 @@ class SolicitudServicioApp:
                 reserva = cliente_encontrado.reserva
                 if reserva is not None:
                     # Si la reserva existe, crear un nuevo objeto Servicio y agregarlo a la lista de servicios de la reserva
-                    servicio = Servicio(servicio_enum, 0, hora_inicio, hora_fin)
+                    servicio = Servicio(servicio_enum, 100, hora_inicio, hora_fin)
                     reserva.servicios.append(servicio)
                     cliente_encontrado.solicitarServicio(servicio)
 

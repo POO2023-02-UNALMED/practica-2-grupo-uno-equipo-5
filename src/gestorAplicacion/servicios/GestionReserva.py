@@ -12,6 +12,9 @@ class GestionReserva:
         self._serviciosAdicionales_=[]
         GestionReserva.reservas.append(self)
 
+        if habitacion:
+            habitacion.setOcupacion(True)
+
 #metodos get  
     def getCliente(self):
         return self._cliente_

@@ -1,4 +1,5 @@
 from gestorAplicacion.servicios.GestionReserva import GestionReserva
+from gestorAplicacion.servicios.Habitacion import Habitacion
 from gestorAplicacion.entidades.Cliente import Cliente
 from capaPersistencia.serializador import Serializador
 from capaPersistencia.deserializador import Deserializador
@@ -49,26 +50,38 @@ def hacer_reserva(self):
     tipo_documento = self.tipo_documento_var.get()
     numero_documento = self.numero_documento_var.get()
     telefono = self.telefono_var.get()
-    habitacion = self.habitacion_var.get()
+    habitacion_numero = self.habitacion_var.get()
     noches = self.noches_var.get()
 
     # Verificar si se proporcionó la información necesaria
-    if nombre_cliente and tipo_documento and numero_documento and telefono and habitacion and noches:
+    if nombre_cliente and tipo_documento and numero_documento and telefono and habitacion_numero and noches:
         # Buscar una instancia de Cliente con el nombre proporcionado
         cliente_encontrado = Cliente.getClienteByNombre(nombre_cliente)
 
         # Verificar si se encontró el cliente
         if cliente_encontrado:
-            # Crear una instancia de GestionReserva y asignar valores
-            reserva = GestionReserva(cliente=cliente_encontrado, habitacion=habitacion, numero_noches=int(noches))
-            cliente_encontrado.realizarReserva(reserva)
+            # Buscar una instancia de Habitacion con el número proporcionado
+            habitacion_encontrada = Habitacion.getHabitacionByNumero(habitacion_numero)
 
-            mensaje = f"Reserva exitosa\nCliente: {nombre_cliente}\nHabitación: {habitacion}\nNoches: {noches}"
-            messagebox.showinfo("Éxito", mensaje)
+            # Verificar si se encontró la habitación
+            if habitacion_encontrada:
+                # Verificar si la habitación está ocupada
+                if habitacion_encontrada.getOcupacion():
+                    messagebox.showwarning("Habitación Ocupada", f"La habitación {habitacion_numero} está ocupada.")
+                else:
+                    # Crear una instancia de GestionReserva y asignar valores
+                    reserva = GestionReserva(cliente=cliente_encontrado, habitacion=habitacion_encontrada, numero_noches=int(noches))
+                    cliente_encontrado.realizarReserva(reserva)
+
+                    mensaje = f"Reserva exitosa\nCliente: {nombre_cliente}\nHabitación: {habitacion_numero}\nNoches: {noches}"
+                    messagebox.showinfo("Éxito", mensaje)
+            else:
+                messagebox.showerror("Error", f"No se encontró una habitación con el número {habitacion_numero}")
         else:
             messagebox.showerror("Error", f"No se encontró un cliente con el nombre {nombre_cliente}")
     else:
         messagebox.showerror("Error", "Por favor, complete todos los campos.")
+
 
 
 if __name__ == "__main__":
