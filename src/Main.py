@@ -8,6 +8,8 @@ from gestorAplicacion.entidades.Cliente import Cliente
 from capaPersistencia.serializador import Serializador
 from capaPersistencia.deserializador import Deserializador
 from format import FieldFrame
+from ffOut import ffOut
+from ventana_principal import mainWin
 from PIL import Image, ImageTk
 import tkinter as tk
 from tkinter import Tk, Entry, Button, PhotoImage, Menu, messagebox
@@ -76,23 +78,74 @@ def ir_a_ventana_principal():
     log_in.title("Inicio")
     log_in.geometry("180x150")
     lbl= tk.Label(log_in, text="Seleccione su tipo de cliente:")
-    option1= tk.Button(log_in, text="Cliente nuevo")
-    option2= tk.Button(log_in, text="cliente antiguo")
+    option1= tk.Button(log_in, text="Cliente nuevo", command=show_signup_window)
+    option2= tk.Button(log_in, text="cliente antiguo", command =seleccionar)
     lbl.grid(row=0, column=1, padx=10, pady=10)
     option1.grid(row=1, column=1, padx=10, pady=10)
     option2.grid(row=2, column=1, padx=10, pady=10)
-    option1.bind("<Button-1>", registrar)
-    option2.bind("<Button-1>", seleccionar)
 
 def cambiar_imagen_principal(event):
     global indice_imagen_actual
     indice_imagen_actual = (indice_imagen_actual + 1) % len(lista_imagenes)
     fotoprin.config(image=lista_imagenes[indice_imagen_actual])
 
-def registrar(event):
-    a= FieldFrame(title="registrar", geo="350x300", args=["nombre", "tipo de cedula", "numero de cedula" , "telefono"])
-    a.show()
-    print(a.getValue("nombre"))
+'''def registrar(event):
+    ventana= Tk()
+    ventana.title("registrar usuario")
+    ventana.geometry("300x300")
+    criterios=["nombre", "tipo_cedula", "numero_cedula", "telefono"]
+    ff= FieldFrame(master=ventana, criterios=criterios)
+    ff.pack()
+    otra_clase = ffOut(ff)
+    boton_obtener_y_guardar = tk.Button(ventana, text="Guardar Valores", command= otra_clase.guardar_valores)
+    boton_obtener_y_guardar.pack(pady=10)
+    continuar= tk.Button(ventana, text="continuar", command= show_signup_window)
+    continuar.pack()
+    ventana.mainloop()'''
+
+def register():
+    # Perform user registration (you can add your logic here)
+    messagebox.showinfo("Registration", "Registration successful!")
+
+def show_signup_window():
+    # Create a Toplevel window for sign-up
+    signup_window = tk.Toplevel()
+    signup_window.title("User Registration")
+
+    # Create and add widgets for registration
+    frame = tk.Frame(signup_window, padx=20, pady=20)
+    frame.pack(expand=True)
+
+    label_email = tk.Label(frame, text="Email:")
+    label_email.grid(row=0, column=0, sticky="e", pady=5)
+
+    entry_email = tk.Entry(frame)
+    entry_email.grid(row=0, column=1, pady=5)
+
+    label_name = tk.Label(frame, text="Name:")
+    label_name.grid(row=1, column=0, sticky="e", pady=5)
+
+    entry_name = tk.Entry(frame)
+    entry_name.grid(row=1, column=1, pady=5)
+
+    label_age = tk.Label(frame, text="Age:")
+    label_age.grid(row=2, column=0, sticky="e", pady=5)
+
+    entry_age = tk.Entry(frame)
+    entry_age.grid(row=2, column=1, pady=5)
+
+    label_gender = tk.Label(frame, text="Gender:")
+    label_gender.grid(row=3, column=0, sticky="e", pady=5)
+
+    entry_gender = tk.Entry(frame)
+    entry_gender.grid(row=3, column=1, pady=5)
+
+    button_register = tk.Button(frame, text="Register", command=register)
+    button_register.grid(row=4, column=1, pady=10, sticky="e")
+
+    button_enter= tk.Button(frame, text="Ingresar", command= mainWin.iniciar)
+    button_enter.pack()
+
 
 def seleccionar():
     pass
@@ -108,7 +161,6 @@ def descripcion_sistema():
     descripcion = "¡Bienvenido al sistema del Hotel Sol Caribe! \nEste sistema te permite realizar reservas y más."
     tk.messagebox.showinfo("Descripción del Sistema", descripcion)
 
-##
 
 
 #Cracion de ventanas
@@ -142,13 +194,6 @@ img_nombre = Image.open("src/uiMain/Tomas3.png")
 img = img_nombre.resize((163, 150), Image.BILINEAR)
 nueva_imagen_5 = ImageTk.PhotoImage(img)
 
-
-'''imagen_principal = PhotoImage(file=os.path.join(ruta_carpeta, "uiMain/hotel1.png"))
-nueva_imagen_1 = PhotoImage(file=os.path.join(ruta_carpeta, "uiMain/hotel2.png"))
-nueva_imagen_2 = PhotoImage(file=os.path.join(ruta_carpeta, "uiMain/hotel3.png"))
-nueva_imagen_3 = PhotoImage(file=os.path.join(ruta_carpeta, "uiMain/hotel4.png"))
-nueva_imagen_4 = PhotoImage(file=os.path.join(ruta_carpeta, "hotel5.png"))
-nueva_imagen_5 = PhotoImage(file=os.path.join(ruta_carpeta, "hotel1.png"))'''
 
 lista_imagenes = [imagen_principal, nueva_imagen_1, nueva_imagen_2, nueva_imagen_3, nueva_imagen_4, nueva_imagen_5]
 indice_imagen_actual = 0
