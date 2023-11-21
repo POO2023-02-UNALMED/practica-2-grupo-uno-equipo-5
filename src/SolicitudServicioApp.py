@@ -91,7 +91,7 @@ class SolicitudServicioApp:
 
         tk.Button(self.root, text="Administrar Servicio", command=administrar_servicio_equipaje).grid(row=6, column=0, columnspan=2, pady=10)
 
-if __name__ == "__main__":
+'''if __name__ == "__main__":
     root = tk.Tk()
     app = SolicitudServicioApp(root)
-    root.mainloop()
+    root.mainloop()'''

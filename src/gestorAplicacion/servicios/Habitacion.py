@@ -28,6 +28,11 @@ class Habitacion:
     
     def getOcupacion(self):
         return self._ocupacion_
+    @classmethod
+    def getHabitacionByNumero(cls, num):
+        for i in cls.habitaciones:
+            if i.getNumero()==num:
+                return i
     #metodos set
     def setHotel(self,hotel):
         self._hotel_=hotel

@@ -25,6 +25,9 @@ class InterfazClienteInfo:
         tk.Button(root, text="Cancelar Reserva", command=self.cancelar_reserva).grid(row=3, column=0, pady=10)
         tk.Button(root, text="Cancelar Servicio", command=self.cancelar_servicio).grid(row=3, column=1, pady=10)
         tk.Button(root, text="Consultar Puntos", command=self.consultar_puntos).grid(row=4, column=0, columnspan=2, pady=10)
+    
+    def iniciar(self):
+            self.root.mainloop()
 
     def obtener_informacion(self):
         nombre_cliente = self.nombre_var.get()
@@ -56,9 +59,3 @@ class InterfazClienteInfo:
         p=self.cliente_encontrado.getPuntos()
         messagebox.showinfo("Puntos del Cliente", f"Total de puntos: {p}")
         
-
-
-if __name__ == "__main__":
-    root = tk.Tk()
-    app = InterfazClienteInfo(root)
-    root.mainloop()
