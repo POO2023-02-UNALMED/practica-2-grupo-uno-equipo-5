@@ -1,7 +1,7 @@
 import tkinter as tk
 
 from tkinter import Tk, Frame, Menu, Label, Button, Toplevel, messagebox,ttk
-from Servicio import ServiciosHotel
+from gestorAplicacion.servicios.Servicio import ServiciosHotel
 
 import os
 from PIL import Image, ImageTk
