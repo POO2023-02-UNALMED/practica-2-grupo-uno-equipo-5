@@ -3,6 +3,7 @@ import pickle
 #from src.gestorAplicacion.servicios import GestionReserva,Habitacion,Hotel,Pago,Servicio
 
 class Deserializador:
+    @staticmethod
     def deserializar():
         pklEmpleados= open("src/capaPersistencia/temp/empleados.pkl","rb")
         pklClientes= open("src/capaPersistencia/temp/clientes.pkl","rb")
