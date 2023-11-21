@@ -1,4 +1,4 @@
-from gestorAplicacion.servicios.Habitacion import Habitacion
+'''from gestorAplicacion.servicios.Habitacion import Habitacion
 from gestorAplicacion.servicios.Hotel import Hotel
 from gestorAplicacion.servicios.Servicio import Servicio
 from gestorAplicacion.servicios.GestionReserva import GestionReserva
@@ -7,10 +7,12 @@ from gestorAplicacion.entidades.Empleado import Empleado
 from gestorAplicacion.entidades.Cliente import Cliente
 from capaPersistencia.serializador import Serializador
 from capaPersistencia.deserializador import Deserializador
+from format import FieldFrame
 from PIL import Image, ImageTk
 import tkinter as tk
 from tkinter import Tk, Entry, Button, PhotoImage, Menu, messagebox
-import os
+import os'''
+from gestorAplicacion.entidades import Cliente, Persona, Empleado
 
 if __name__==  "__main__":
 
@@ -89,7 +91,9 @@ def cambiar_imagen_principal(event):
     fotoprin.config(image=lista_imagenes[indice_imagen_actual])
 
 def registrar(event):
-    pass
+    a= FieldFrame("nombre", "tipo de cedula", "numero de cedula" , "telefono")
+    a.show()
+    print(a.getValue("nombre"))
 
 def seleccionar():
     pass
@@ -104,6 +108,8 @@ def descripcion_sistema():
     # por ejemplo, creando una etiqueta temporal o una nueva ventana
     descripcion = "¡Bienvenido al sistema del Hotel Sol Caribe! \nEste sistema te permite realizar reservas y más."
     tk.messagebox.showinfo("Descripción del Sistema", descripcion)
+
+##
 
 
 #Cracion de ventanas
