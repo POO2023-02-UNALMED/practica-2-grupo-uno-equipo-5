@@ -4,13 +4,28 @@ import pickle
 
 class Deserializador:
     def deserializar():
-        pklEntidades= open("src/capaPersistencia/temp/personas.pkl","rb")
-        pklServicios= open("src/capaPersistencia/temp/servicios.pkl","rb")
+        pklEmpleados= open("src/capaPersistencia/temp/empleados.pkl","rb")
+        pklClientes= open("src/capaPersistencia/temp/clientes.pkl","rb")
+        pklHoteles= open("src/capaPersistencia/temp/hoteles.pkl","rb")
 
-        #pklE= pickle.load(pklEntidades)
-        pklS= pickle.load(pklServicios)
 
-        pklEntidades.close()
-        pklServicios.close()
-        print("deserializacion exitosa")
+        #pkle= pickle.load(pklEmpleados)
+        #pklc= pickle.load(pklClientes)
+        pklh= pickle.load(pklHoteles)
+ 
+        pklEmpleados.close()
+        pklClientes.close()
+        pklHoteles.close()
+
+
+        result={
+            #"empleados": pkle,
+            #"clientes": pklc,
+            "hoteles": pklh,
+            #"reservas": pklr
+        }
+
+        return result
+    
+
         

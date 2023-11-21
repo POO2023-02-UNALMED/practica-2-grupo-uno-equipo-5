@@ -22,53 +22,53 @@ class Persona:
 #        self.num_documento=num_documento
 #        self.telefono=telefono
     
-    def get_nombre(self):
+    def getNombre(self):
         return self.nombre
 
-    def get_edad(self):
+    def getEdad(self):
         return self.edad
 
-    def get_sexo(self):
+    def getSexo(self):
         return self.sexo
 
-    def get_tipo_documento(self):
+    def getTipoDocumento(self):
         return self.tipo_documento
 
-    def get_num_documento(self):
+    def geNumDocumento(self):
         return self.num_documento
 
-    def get_telefono(self):
+    def getTelefono(self):
         return self.telefono
 
-    def get_direccion(self):
+    def getDireccion(self):
         return self.direccion
 
-    def get_correo(self):
+    def getCorreo(self):
         return self.correo
 
     # Setters
-    def set_nombre(self, nombre):
+    def setNombre(self, nombre):
         self.nombre = nombre
 
-    def set_edad(self, edad):
+    def setEdad(self, edad):
         self.edad = edad
 
-    def set_sexo(self, sexo):
+    def setSexo(self, sexo):
         self.sexo = sexo
 
-    def set_tipo_documento(self, tipo_documento):
+    def setTipoDocumento(self, tipo_documento):
         self.tipo_documento = tipo_documento
 
-    def set_num_documento(self, num_documento):
+    def setNumDocumento(self, num_documento):
         self.num_documento = num_documento
 
-    def set_telefono(self, telefono):
+    def setTelefono(self, telefono):
         self.telefono = telefono
 
-    def set_direccion(self, direccion):
+    def setDireccion(self, direccion):
         self.direccion = direccion
 
-    def set_correo(self, correo):
+    def setCorreo(self, correo):
         self.correo = correo
     
     #metodos abstractos 

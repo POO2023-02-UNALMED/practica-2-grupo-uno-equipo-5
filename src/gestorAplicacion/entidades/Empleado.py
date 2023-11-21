@@ -2,11 +2,14 @@ import gestorAplicacion
 from gestorAplicacion.entidades.Persona import Persona
 
 class Empleado(Persona):
+    empleados=[]
+
     def __init__(self, nombre, edad, sexo, tipo_documento, num_documento, telefono, direccion, correo, calificacion, IDEmpleado, rol, sueldo):
         super().__init__(nombre, edad, sexo, tipo_documento, num_documento, telefono, direccion, correo)
         self.IDEmpleado = IDEmpleado
         self.rol = rol
         self.sueldo = sueldo
+        Empleado.empleados.append(self)
 
     def getIDEmpleado(self):
         return self.IDEmpleado
@@ -31,10 +34,12 @@ class Empleado(Persona):
 
     def ascender(self):
         pass
-
+    
+    @classmethod
+    def getEmpleados(cls):
+        return cls.empleados
+    
+    
     def __str__(self):
         return f"Empleado\nIDEmpleado: {self.IDEmpleado}\nNombre: {self.getNombre()}\nRol: {self.rol}\nSueldo: {self.sueldo}"
 
-# Ejemplo de uso
-empleado = Empleado("Juan", 30, 'M', "Cedula", "123456789", "1234567890", "Dirección", "correo@ejemplo.com", 5, "E123", "Gerente", 5000.0)
-print(empleado)

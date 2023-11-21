@@ -4,29 +4,25 @@ from gestorAplicacion.servicios import GestionReserva,Habitacion,Hotel,Pago,Serv
 
 class Serializador:
 
-    def serializar():
-        pklEntidades= open("src/capaPersistencia/temp/personas.pkl","wb")
-        pklServicios= open("src/capaPersistencia/temp/servicios.pkl","wb")
-        
-        hoteles=Hotel.Hotel.getHoteles()
-        reservas= GestionReserva.GestionReserva.getReservas()
-        #clientes= Cliente.Cliente.getClientes()
-        #empleados= Empleado.Empleado.getEmpleados()
+    def serializar(hoteles, empleados, clientes):
+        pklEmpleados= open("src/capaPersistencia/temp/empleados.pkl","wb")
+        pklClientes= open("src/capaPersistencia/temp/clientes.pkl","wb")
+        pklHoteles= open("src/capaPersistencia/temp/hoteles.pkl","wb")
 
         for i in hoteles:
-            pickle.dump(i, pklServicios)
-        
-        for i in reservas:
-            pickle.dump(i, pklServicios)
+            print(i)
+            pickle.dump(i, pklHoteles)
+    
 
-        #for i in empleados:
-        #    pickle.dump(i, pklEntidades)
+        for i in empleados:
+            pickle.dump(i, pklEmpleados)
 
-        #for i in clientes:
-        #    pickle.dump(i, pklEntidades)
+        for i in clientes:
+            pickle.dump(i, pklClientes)
 
         #nota, cada clase debe tener una lista como atributo de clase en donde almacene las instancias a medida que se creen
 
-        pklEntidades.close()
-        pklServicios.close()
-        print("serializacion exitosa")
+        pklHoteles.close()
+        pklClientes.close()
+        pklEmpleados.close()
+        return ("serializacion exitosa")

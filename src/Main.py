@@ -1,6 +1,10 @@
 from gestorAplicacion.servicios.Habitacion import  Habitacion
 from gestorAplicacion.servicios.Hotel import Hotel
 from gestorAplicacion.servicios.Servicio import Servicio
+from gestorAplicacion.servicios.GestionReserva import GestionReserva
+from gestorAplicacion.entidades.Persona import Persona
+from gestorAplicacion.entidades.Empleado import Empleado
+from gestorAplicacion.entidades.Cliente import Cliente
 from capaPersistencia.serializador import Serializador
 from capaPersistencia.deserializador import Deserializador
 import tkinter as tk
@@ -8,7 +12,13 @@ from tkinter import Tk, Entry, Button, PhotoImage, Menu, messagebox
 import os
 
 if __name__=="__main__":
-    serv1= Servicio("Desayuno", 2.99, "6:00", "10:00")
+    deserializado= Deserializador.deserializar()
+
+    hoteles=deserializado["hoteles"]
+    #empleados=deserializado["empleados"]
+    #clientes=deserializado["clientes"]
+
+    '''serv1= Servicio("Desayuno", 2.99, "6:00", "10:00")
     serv2= Servicio("Actividad tematica", 6.99, "10:00", "15:30")
     serv3= Servicio("Sesion de masaje", 10.50)
 
@@ -21,6 +31,12 @@ if __name__=="__main__":
         hab= Habitacion(hotel1,(100+i),4,100, "estandar", False)
         hotel1.addHabitaciones(hab)
 
+    hoteles=Hotel.getHoteles()
+    empleados= Empleado.getEmpleados()
+    clientes= Cliente.getClientes()
+    Serializador.serializar(hoteles=hoteles, empleados=empleados,clientes=clientes)
+    '''
+    
     #interfaz grafica de usuario aqui:
     #Definicion de cambio de texto e imagenes dentro de los frames p5 y p6
 def cambio_hj_vida():
