@@ -1,12 +1,24 @@
+from enum import Enum
+
+class ServiciosHotel(Enum):
+    RESTAURANTE = "Restaurante"
+    SPA = "Spa"
+    HABITACION = "Servicio a la Habitación"
+    PISCINA = "Piscina"
+  
+
 class Servicio:
-    servicios=[]
-    def __init__(self, nombre, precio, horaInicio=None, horaFin=None):
-        self._nombre_=nombre
-        self._precio_=precio
-        self._horaIni_=horaInicio
-        self._horaFin_=horaFin
-        Servicio.servicios.append(self)
-    
+    servicios = []
+
+    def __init__(self, servicio_enum, precio, horaInicio=None, horaFin=None):
+        if isinstance(servicio_enum, ServiciosHotel):
+            self._nombre_ = servicio_enum.value  # Nombre del servicio es el valor del Enum
+            self._precio_ = precio
+            self._horaIni_ = horaInicio
+            self._horaFin_ = horaFin
+            Servicio.servicios.append(self)
+        else:
+            raise ValueError("El parámetro 'servicio_enum' debe ser un miembro de la enumeración ServiciosHotel.")
     #metodos get
     def getNombre(self):
         return self._nombre_
@@ -35,4 +47,4 @@ class Servicio:
         return cls.servicios
     #metodo toString
     def __str__(self):
-        return ""
+        return f"Servicio: {self._nombre_}, Precio: {self._precio_}, {self.getHorario()}"
