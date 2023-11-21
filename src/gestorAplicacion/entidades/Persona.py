@@ -1,10 +1,10 @@
 import gestorAplicacion
-from multimethod import multimethod
+#from multimethod import multimethod
 from abc import ABC, abstractmethod
 
 
 class Persona:
-    @multimethod 
+    #@multimethod 
     def __init__(self, nombre, edad, sexo, tipo_documento, num_documento, telefono, direccion=None, correo=None):
         self.nombre = nombre
         self.edad=edad
@@ -15,12 +15,12 @@ class Persona:
         self.direccion=direccion
         self.correo=correo
     
-    @multimethod
+    '''@multimethod
     def __init__(self, nombre, tipo_documento, num_documento,  telefono):
         self.nombre=nombre
         self.tipo_documento=tipo_documento
         self.num_documento=num_documento
-        self.telefono=telefono
+        self.telefono=telefono'''
     
     def getNombre(self):
         return self.nombre

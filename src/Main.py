@@ -1,4 +1,4 @@
-'''from gestorAplicacion.servicios.Habitacion import Habitacion
+from gestorAplicacion.servicios.Habitacion import Habitacion
 from gestorAplicacion.servicios.Hotel import Hotel
 from gestorAplicacion.servicios.Servicio import Servicio
 from gestorAplicacion.servicios.GestionReserva import GestionReserva
@@ -11,8 +11,7 @@ from format import FieldFrame
 from PIL import Image, ImageTk
 import tkinter as tk
 from tkinter import Tk, Entry, Button, PhotoImage, Menu, messagebox
-import os'''
-from gestorAplicacion.entidades import Cliente, Persona, Empleado
+import os
 
 if __name__==  "__main__":
 
@@ -91,7 +90,7 @@ def cambiar_imagen_principal(event):
     fotoprin.config(image=lista_imagenes[indice_imagen_actual])
 
 def registrar(event):
-    a= FieldFrame("nombre", "tipo de cedula", "numero de cedula" , "telefono")
+    a= FieldFrame(title="registrar", geo="350x300", args=["nombre", "tipo de cedula", "numero de cedula" , "telefono"])
     a.show()
     print(a.getValue("nombre"))
 
@@ -119,37 +118,37 @@ kick.resizable(1, 1)
 kick.geometry('800x600')
 kick.configure(bg="#15ADD6")
 ruta_carpeta = os.path.dirname(os.path.abspath(__file__))
-img_nombre = Image.open("src/Juan1 copy.png")
+img_nombre = Image.open("src/uiMain/Juan1 copy.png")
 img = img_nombre.resize((163, 150), Image.BILINEAR)
 imagen_principal = ImageTk.PhotoImage(img)
 
-img_nombre = Image.open("src/Marco1.png")
+img_nombre = Image.open("src/uiMain/Marco1.png")
 img = img_nombre.resize((163, 150), Image.BILINEAR)
 nueva_imagen_1 = ImageTk.PhotoImage(img)
 
-img_nombre = Image.open("src/Marco3.png")
+img_nombre = Image.open("src/uiMain/Marco3.png")
 img = img_nombre.resize((163,150), Image.BILINEAR)
 nueva_imagen_2 = ImageTk.PhotoImage(img)
 
-img_nombre = Image.open("src/Marco4.png")
+img_nombre = Image.open("src/uiMain/Marco4.png")
 img = img_nombre.resize((163, 150), Image.BILINEAR)
 nueva_imagen_3 = ImageTk.PhotoImage(img)
 
-img_nombre = Image.open("src/Juan1 copy.png")
+img_nombre = Image.open("src/uiMain/Juan1 copy.png")
 img = img_nombre.resize((163, 150), Image.BILINEAR)
 nueva_imagen_4 = ImageTk.PhotoImage(img)
 
-img_nombre = Image.open("src/Tomas3.png")
+img_nombre = Image.open("src/uiMain/Tomas3.png")
 img = img_nombre.resize((163, 150), Image.BILINEAR)
 nueva_imagen_5 = ImageTk.PhotoImage(img)
 
 
-imagen_principal = PhotoImage(file=os.path.join(ruta_carpeta, "hotel1.png"))
-nueva_imagen_1 = PhotoImage(file=os.path.join(ruta_carpeta, "hotel2.png"))
-nueva_imagen_2 = PhotoImage(file=os.path.join(ruta_carpeta, "hotel3.png"))
-nueva_imagen_3 = PhotoImage(file=os.path.join(ruta_carpeta, "hotel4.png"))
+'''imagen_principal = PhotoImage(file=os.path.join(ruta_carpeta, "uiMain/hotel1.png"))
+nueva_imagen_1 = PhotoImage(file=os.path.join(ruta_carpeta, "uiMain/hotel2.png"))
+nueva_imagen_2 = PhotoImage(file=os.path.join(ruta_carpeta, "uiMain/hotel3.png"))
+nueva_imagen_3 = PhotoImage(file=os.path.join(ruta_carpeta, "uiMain/hotel4.png"))
 nueva_imagen_4 = PhotoImage(file=os.path.join(ruta_carpeta, "hotel5.png"))
-nueva_imagen_5 = PhotoImage(file=os.path.join(ruta_carpeta, "hotel1.png"))
+nueva_imagen_5 = PhotoImage(file=os.path.join(ruta_carpeta, "hotel1.png"))'''
 
 lista_imagenes = [imagen_principal, nueva_imagen_1, nueva_imagen_2, nueva_imagen_3, nueva_imagen_4, nueva_imagen_5]
 indice_imagen_actual = 0
