@@ -4,7 +4,7 @@ from gestorAplicacion.entidades.Persona import Persona
 class Empleado(Persona):
     empleados=[]
 
-    def __init__(self, nombre, edad, sexo, tipo_documento, num_documento, telefono, direccion, correo, calificacion, IDEmpleado, rol, sueldo):
+    def __init__(self, nombre, edad, sexo, tipo_documento, num_documento, telefono="", direccion="", correo="", calificacion=None, IDEmpleado=None, rol=None, sueldo=0):
         super().__init__(nombre, edad, sexo, tipo_documento, num_documento, telefono, direccion, correo)
         self.IDEmpleado = IDEmpleado
         self.rol = rol

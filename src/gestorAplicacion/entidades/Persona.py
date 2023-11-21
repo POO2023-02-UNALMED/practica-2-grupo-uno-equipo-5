@@ -5,7 +5,7 @@ from abc import ABC, abstractmethod
 
 class Persona:
     #@multimethod 
-    def __init__(self, nombre, edad, sexo, tipo_documento, num_documento, telefono, direccion=None, correo=None):
+    def __init__(self, nombre, edad="", sexo="", tipo_documento="", num_documento="", telefono="", direccion=None, correo=None):
         self.nombre = nombre
         self.edad=edad
         self.sexo=sexo

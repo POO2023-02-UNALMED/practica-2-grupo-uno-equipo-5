@@ -10,8 +10,8 @@ class Deserializador:
         pklHoteles= open("src/capaPersistencia/temp/hoteles.pkl","rb")
 
 
-        #pkle= pickle.load(pklEmpleados)
-        #pklc= pickle.load(pklClientes)
+        pkle= pickle.load(pklEmpleados)
+        pklc= pickle.load(pklClientes)
         pklh= pickle.load(pklHoteles)
  
         pklEmpleados.close()
@@ -20,10 +20,9 @@ class Deserializador:
 
 
         result={
-            #"empleados": pkle,
-            #"clientes": pklc,
+            "empleados": pkle,
+            "clientes": pklc,
             "hoteles": pklh,
-            #"reservas": pklr
         }
 
         return result

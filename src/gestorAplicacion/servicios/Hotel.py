@@ -25,6 +25,7 @@ class Hotel:
     
     def getServicios(self):
         return self._servicios_
+    
     #metodos set
     def setNombre(self,nombre):
         self._nombre_=nombre
@@ -61,4 +62,4 @@ class Hotel:
         return cls.hoteles
     
     def __str__(self):
-        return "asdfghj"
+        return "Hotel"+self.getNombre()

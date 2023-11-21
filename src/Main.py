@@ -9,6 +9,7 @@ from capaPersistencia.serializador import Serializador
 from capaPersistencia.deserializador import Deserializador
 from format import FieldFrame
 from ffOut import ffOut
+from gestorAplicacion.servicios.Servicio import ServiciosHotel
 from ventana_principal import mainWin
 from PIL import Image, ImageTk
 import tkinter as tk
@@ -17,25 +18,45 @@ import os
 
 if __name__==  "__main__":
 
-    '''deserializado= Deserializador.deserializar()
+    deserializado= Deserializador.deserializar()
 
     hoteles=deserializado["hoteles"]
-    #empleados=deserializado["empleados"]
-    #clientes=deserializado["clientes"]
+    empleados=deserializado["empleados"]
+    clientes=deserializado["clientes"]
 
-    serv1= Servicio("Desayuno", 2.99, "6:00", "10:00")
-    serv2= Servicio("Actividad tematica", 6.99, "10:00", "15:30")
-    serv3= Servicio("Sesion de masaje", 10.50)
+
+
+    '''serv1= Servicio(ServiciosHotel.RESTAURANTE, 2.99, "6:00", "10:00")
+    serv2= Servicio(ServiciosHotel.PISCINA, 6.99, "10:00", "15:30")
+    serv3= Servicio(ServiciosHotel.EQUIPAJE, 10.50)
 
     hotel1= Hotel("Sol caribe", "<direccion>")
     hotel1.setComentarios("muy bueno", "excelente")
     hotel1.setServicios(Servicio.getServicios())
     hotel1.setCalificacion(4.0)
 
-    for i in range(6):
+    for i in range(10):
         hab= Habitacion(hotel1,(100+i),4,100, "estandar", False)
         hotel1.addHabitaciones(hab)
+    for i in range(10):
+        hab= Habitacion(hotel1, (200+i),2,175,"suite", False)
+        hotel1.addHabitaciones(hab)
 
+    for i in range(5):
+        hab= Habitacion(hotel1, (300+i), 6, 290, "VIP", False )
+        hotel1.addHabitaciones(hab)
+
+    for i in [1,7,4,9,11]:
+        a=hotel1._habitaciones_[i]
+        a.setOcupacion(True)
+
+    cliente1= Cliente(nombre="Juan Alberto", tipo_cedula="CC", numero_cedula="1111000111", telefono="3142568412")
+    cliente2= Cliente("Catalina juarez", "CC", "102336545", "3132256343",1,hotel1,"VIP",None,201)
+
+    for i in range(5):
+        nombres= ["juano", "rr", "pepo", "catalina", "doñapaola", "kevin",""]
+        emp= Empleado(nombres[i], 4*i, "--", "CC", str(1000000+i), "300001010", "","solcarib@emp.co", 
+                      (3+(i*0.1)), 100000+i, "Servicios varios", 1200000)
     hoteles=Hotel.getHoteles()
     empleados= Empleado.getEmpleados()
     clientes= Cliente.getClientes()
