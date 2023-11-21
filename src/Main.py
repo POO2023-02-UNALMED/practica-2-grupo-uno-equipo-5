@@ -162,6 +162,7 @@ def seleccionar():
 def salir_aplicacion():
     respuesta = messagebox.askyesno("Salir", "¿Estás seguro de que quieres salir?")
     if respuesta:
+        Serializador.serializar(hoteles,empleados,clientes)
         kick.destroy()
 
 def descripcion_sistema():
@@ -179,19 +180,19 @@ kick.resizable(1, 1)
 kick.geometry('800x600')
 kick.configure(bg="#15ADD6")
 ruta_carpeta = os.path.dirname(os.path.abspath(__file__))
-img_nombre = Image.open("src/uiMain/Marco1.png")
+img_nombre = Image.open("src/uiMain/marco1.png")
 img = img_nombre.resize((163, 150), Image.BILINEAR)
 imagen_principal = ImageTk.PhotoImage(img)
 
-img_nombre = Image.open("src/uiMain/Marco2.png")
+img_nombre = Image.open("src/uiMain/marco2.png")
 img = img_nombre.resize((163, 150), Image.BILINEAR)
 nueva_imagen_1 = ImageTk.PhotoImage(img)
 
-img_nombre = Image.open("src/uiMain/Marco3.png")
+img_nombre = Image.open("src/uiMain/marco3.png")
 img = img_nombre.resize((163,150), Image.BILINEAR)
 nueva_imagen_2 = ImageTk.PhotoImage(img)
 
-img_nombre = Image.open("src/uiMain/Marco4.png")
+img_nombre = Image.open("src/uiMain/marco4.png")
 img = img_nombre.resize((163, 150), Image.BILINEAR)
 nueva_imagen_3 = ImageTk.PhotoImage(img)
 
