@@ -8,7 +8,7 @@ from datetime import datetime
 class Cliente(Persona):
     clientes=[]
 
-    def __init__(self, nombre, tipo_cedula, numero_cedula, telefono, idCliente, hotel, membresia, equipaje, habitacion):
+    def __init__(self, nombre, tipo_cedula, numero_cedula, telefono, idCliente=0, hotel=None, membresia=None, equipaje=None, habitacion=None):
         super().__init__(nombre, tipo_cedula, numero_cedula, telefono)
         self.idCliente = idCliente
         self.hotel = hotel

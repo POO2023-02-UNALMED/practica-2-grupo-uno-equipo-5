@@ -1,9 +1,8 @@
 import pickle
-from gestorAplicacion.entidades import Persona,Cliente,Empleado
-from gestorAplicacion.servicios import GestionReserva,Habitacion,Hotel,Pago,Servicio
+
 
 class Serializador:
-
+    @staticmethod
     def serializar(hoteles, empleados, clientes):
         pklEmpleados= open("src/capaPersistencia/temp/empleados.pkl","wb")
         pklClientes= open("src/capaPersistencia/temp/clientes.pkl","wb")
@@ -25,4 +24,4 @@ class Serializador:
         pklHoteles.close()
         pklClientes.close()
         pklEmpleados.close()
-        return ("serializacion exitosa")
+        print("serializacion exitosa")
