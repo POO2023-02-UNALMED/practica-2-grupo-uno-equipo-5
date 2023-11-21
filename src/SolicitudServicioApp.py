@@ -38,8 +38,7 @@ class SolicitudServicioApp:
 
         tk.Button(root, text="Enviar Solicitud", command=self.enviar_solicitud).grid(row=4, column=0, columnspan=2, pady=10)
 
-        tk.Button(root, text="Enviar Solicitud", command=self.enviar_solicitud).grid(row=3, column=0, columnspan=2, pady=10)
-
+       
     def enviar_solicitud(self):
         # Obtener los valores ingresados por el usuario
         nombre_cliente = self.nombre_var.get()
@@ -59,7 +58,7 @@ class SolicitudServicioApp:
                 if reserva is not None:
                     # Si la reserva existe, crear un nuevo objeto Servicio y agregarlo a la lista de servicios de la reserva
                     servicio = Servicio(servicio_enum, 100, hora_inicio, hora_fin)
-                    reserva.servicios.append(servicio)
+                    reserva._serviciosAdicionales_.append(servicio)
                     cliente_encontrado.solicitarServicio(servicio)
 
                     mensaje = f"Solicitud de servicio:\nCliente: {nombre_cliente}\nServicio: {servicio_enum}\nHora de Inicio: {hora_inicio}\nHora de Fin: {hora_fin}"

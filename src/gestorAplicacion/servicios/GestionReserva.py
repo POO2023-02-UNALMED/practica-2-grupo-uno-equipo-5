@@ -66,6 +66,7 @@ class GestionReserva:
 
     def borrarReserva(self):
         GestionReserva.reservas.remove(self)
+        self._habitacion_.setOcupacion(False)
 
 #metodo de clase
     @classmethod
