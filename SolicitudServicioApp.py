@@ -60,6 +60,7 @@ class SolicitudServicioApp:
                     # Si la reserva existe, crear un nuevo objeto Servicio y agregarlo a la lista de servicios de la reserva
                     servicio = Servicio(servicio_enum, 0, hora_inicio, hora_fin)
                     reserva.servicios.append(servicio)
+                    cliente_encontrado.solicitarServicio(servicio)
 
                     mensaje = f"Solicitud de servicio:\nCliente: {nombre_cliente}\nServicio: {servicio_enum}\nHora de Inicio: {hora_inicio}\nHora de Fin: {hora_fin}"
                     messagebox.showinfo("Solicitud Enviada", mensaje)

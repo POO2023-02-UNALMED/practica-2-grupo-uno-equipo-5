@@ -61,6 +61,7 @@ def hacer_reserva(self):
         if cliente_encontrado:
             # Crear una instancia de GestionReserva y asignar valores
             reserva = GestionReserva(cliente=cliente_encontrado, habitacion=habitacion, numero_noches=int(noches))
+            cliente_encontrado.realizarReserva(reserva)
 
             mensaje = f"Reserva exitosa\nCliente: {nombre_cliente}\nHabitación: {habitacion}\nNoches: {noches}"
             messagebox.showinfo("Éxito", mensaje)
