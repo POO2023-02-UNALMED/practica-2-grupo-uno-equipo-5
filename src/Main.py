@@ -25,7 +25,6 @@ if __name__==  "__main__":
     clientes=deserializado["clientes"]
 
 
-
     '''serv1= Servicio(ServiciosHotel.RESTAURANTE, 2.99, "6:00", "10:00")
     serv2= Servicio(ServiciosHotel.PISCINA, 6.99, "10:00", "15:30")
     serv3= Servicio(ServiciosHotel.EQUIPAJE, 10.50)

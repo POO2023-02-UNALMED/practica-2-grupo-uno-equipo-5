@@ -96,7 +96,7 @@ class Cliente(Persona):
         Cliente.clientes.append(cliente)
 
     def __str__(self):
-        return f"Cliente\nidCliente: {self.idCliente}\nNombre: {self.getNombre()}\nCC: {self.getNum_documento()}\nPuntos: {self.getPuntos()}"
+        return f"Cliente\nidCliente: {self.idCliente}\nNombre: {self.getNombre()}\nCC: {self.num_documento}\nPuntos: {self.getPuntos()}"
 
     def personaRol(self):
         return "Cliente"
