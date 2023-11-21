@@ -50,26 +50,26 @@ def cambio_hj_vida():
         hj_vida.config(
             text="Juan David Robayo es un estudiante apasionado de ingeniería de sistemas, \n\nencuentra inspiración en la resolución de problemas complejos. \n\nSu habilidad para pensar de manera lógica y creativa\n\n  lo ha llevado a destacarse. Además de su dedicación académica,\n\n  el disfruta del ajedrez y ve cada desafío \n\ncomo una oportunidad para mejorar sus habilidades estratégicas,\n\n su mayor meta en su vida es pasar la materia de \n\nprogramación orientada a objetos,\n\n el sabe que el profe le hará el favor de pasarlo.",
             font=("Helvetica", 7, 'bold italic'))
-        imagen1.config(image =  nueva_imagen_1)
-        imagen2.config(image =nueva_imagen_2)
-        imagen3.config(image = nueva_imagen_3)
-        imagen4.config(image= nueva_imagen_4)
+        imagen1.config(image =  nueva_imagen_4)
+        imagen2.config(image =nueva_imagen_9)
+        imagen3.config(image = nueva_imagen_10)
+        imagen4.config(image= nueva_imagen_11)
     elif hj_vida[
         "text"] == "Juan David Robayo es un estudiante apasionado de ingeniería de sistemas, \n\nencuentra inspiración en la resolución de problemas complejos. \n\nSu habilidad para pensar de manera lógica y creativa\n\n  lo ha llevado a destacarse. Además de su dedicación académica,\n\n  el disfruta del ajedrez y ve cada desafío \n\ncomo una oportunidad para mejorar sus habilidades estratégicas,\n\n su mayor meta en su vida es pasar la materia de \n\nprogramación orientada a objetos,\n\n el sabe que el profe le hará el favor de pasarlo.":
         hj_vida.config(
             text="Marcos Nuñes Isaza es un estudiante de ingeniería de sistemas, \n\nse destaca por su enfoque meticuloso en cada tarea.\n\n Su interés por la ciberseguridad lo motiva a explorar constantemente\n\n nuevas formas de proteger la información.\n\n En su tiempo libre, él es un ávido lector\n\n y se embarca en la creación de pequeños proyectos de\n\n desarrollo de software para ampliar su experiencia práctica.\n\nTiene como objetivo superar la materia de Programación Orientada a Objetos\n\n y confía en su profesor.",
             font=("Helvetica", 7, 'bold italic'))
-        imagen1.config(image=nueva_imagen_3)
+        imagen1.config(image=imagen_principal)
         imagen2.config(image=nueva_imagen_1)
         imagen3.config(image=nueva_imagen_2)
-        imagen4.config(image=nueva_imagen_4)
+        imagen4.config(image=nueva_imagen_3)
     else:
         hj_vida.config(
             text="Thomas Monnier Granda es un dedicado estudiante de ingeniería de sistemas, \n\nes conocido por su entusiasmo contagioso y su amor por los desafíos. \n\nApasionado por la inteligencia artificial, busca constantemente\n\n oportunidades para aplicarsus conocimientos en proyectos innovadores.\n\n Fuera de la informática, disfruta de la fotografía y \n\nsueña con combinar su pasión por la tecnología\n\n con el arte visual.")
-        imagen1.config(image=nueva_imagen_4)
-        imagen2.config(image=nueva_imagen_3)
-        imagen3.config(image=imagen_principal)
-        imagen4.config(image=nueva_imagen_1)
+        imagen1.config(image=nueva_imagen_5)
+        imagen2.config(image=nueva_imagen_6)
+        imagen3.config(image=nueva_imagen_7)
+        imagen4.config(image=nueva_imagen_8)
 
 
 def ir_a_ventana_principal():
@@ -157,11 +157,11 @@ kick.resizable(1, 1)
 kick.geometry('800x600')
 kick.configure(bg="#15ADD6")
 ruta_carpeta = os.path.dirname(os.path.abspath(__file__))
-img_nombre = Image.open("src/uiMain/Juan1 copy.png")
+img_nombre = Image.open("src/uiMain/Marco1.png")
 img = img_nombre.resize((163, 150), Image.BILINEAR)
 imagen_principal = ImageTk.PhotoImage(img)
 
-img_nombre = Image.open("src/uiMain/Marco1.png")
+img_nombre = Image.open("src/uiMain/Marco2.png")
 img = img_nombre.resize((163, 150), Image.BILINEAR)
 nueva_imagen_1 = ImageTk.PhotoImage(img)
 
@@ -177,9 +177,33 @@ img_nombre = Image.open("src/uiMain/Juan1 copy.png")
 img = img_nombre.resize((163, 150), Image.BILINEAR)
 nueva_imagen_4 = ImageTk.PhotoImage(img)
 
-img_nombre = Image.open("src/uiMain/Tomas3.png")
+img_nombre = Image.open("src/uiMain/Juan2 copy.png")
+img = img_nombre.resize((163, 150), Image.BILINEAR)
+nueva_imagen_9 = ImageTk.PhotoImage(img)
+
+img_nombre = Image.open("src/uiMain/Juan3 copy.png")
+img = img_nombre.resize((163, 150), Image.BILINEAR)
+nueva_imagen_10 = ImageTk.PhotoImage(img)
+
+img_nombre = Image.open("src/uiMain/Juan4 copy.png")
+img = img_nombre.resize((163, 150), Image.BILINEAR)
+nueva_imagen_11 = ImageTk.PhotoImage(img)
+
+img_nombre = Image.open("src/uiMain/tomas3.png")
 img = img_nombre.resize((163, 150), Image.BILINEAR)
 nueva_imagen_5 = ImageTk.PhotoImage(img)
+
+img_nombre = Image.open("src/uiMain/tomas2.png")
+img = img_nombre.resize((163, 150), Image.BILINEAR)
+nueva_imagen_6 = ImageTk.PhotoImage(img)
+
+img_nombre = Image.open("src/uiMain/tomas1.png")
+img = img_nombre.resize((163, 150), Image.BILINEAR)
+nueva_imagen_7 = ImageTk.PhotoImage(img)
+
+img_nombre = Image.open("src/uiMain/tomas4.png")
+img = img_nombre.resize((163, 150), Image.BILINEAR)
+nueva_imagen_8 = ImageTk.PhotoImage(img)
 
 img_hotel= Image.open("src/uiMain/hotel1.png")
 img= img_hotel.resize((300,300), Image.BILINEAR)
